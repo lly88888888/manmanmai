@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>首页</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="./lib/jquery-3.3.1.js"></script>
+    <script src="./lib/template-web.min.js"></script>
+    <script src="./js/index.js"></script>
+    <!-- <script src="./js/rem.js"></script> -->
+  </head>
+  <body>
+    <div class="mmm_container">
+      <!-- 头部 -->
+      <header class="mmm_header">
+        <div class="mmm_logo">
+          <a href="">
+            <img src="./images/header_logo.png" alt="" />
+          </a>
+        </div>
+        <div class="mmm_download">
+          <a href="">
+            <img src="./images/header_app.png" alt="" />
+          </a>
+        </div>
+      </header>
+      <!-- 搜索部分 -->
+      <section class="mmm_search">
+        <div class="search">
+          <input type="text" placeholder="请输入比价商品" />
+        </div>
+        <div class="btn">
+          <button>比价</button>
+        </div>
+      </section>
+      <!-- 导航 -->
+      <nav class="mmm_nav clearfix"></nav>
+      <!-- 主体区域 -->
+      <section class="mmm_main">
+        <div class="title">
+          <span>超值折扣推荐</span>
+          <a href=""> <img src="./images/more.png" alt=""/></a>
+        </div>
+        <a class="inner"></a>
+        <div class="bottom">
+          <button>更多优惠信息>></button>
+        </div>
+      </section>
+      <section class="mmm_brand">
+        <span>品牌排行</span>
+        <a href=""> <img src="./images/more.png" alt=""/></a>
+      </section>
+      <!-- 底部区域 -->
+
+      <footer class="mmm_footer">
+        <ul>
+          <li><a href="">登录</a></li>
+          <li><a href="">注册</a></li>
+          <li>
+            <a href=""><img src="./images/top.jpg" alt="" />返回顶部</a>
+          </li>
+        </ul>
+        <div class="bottom">
+          <p>
+            <a href="">手机App下载</a>
+            <a href="">慢慢买手机版</a> --掌上比价平台
+          </p>
+          <a href="">m.manmanbuy.com</a>
+        </div>
+      </footer>
+    </div>
+    <script type="text/html" id="tpl">
+      {{each result v i}}
+      {{if v.name=='更多'}}
+       <div class="nav_item even">
+        <a href="javascript:;">
+          <img src="./images/{{v.img}}" alt="">
+          <p>{{v.name}}</p>
+        </a>
+       </div>
+      {{else if v.indexmenuId>=8}}
+      <div class="nav_item active">
+        <a href="{{v.titlehref}}.html">
+          <img src="./images/{{v.img}}" alt="">
+          <p>{{v.name}}</p>
+        </a>
+       </div>
+       {{else}}
+        <div class="nav_item">
+          <a href="{{v.titlehref}}.html">
+            <img src="./images/{{v.img}}" alt="">
+            <p>{{v.name}}</p>
+          </a>
+         </div>
+       {{/if}}
+      {{/each}}
+    </script>
+    <script type="text/html" id="tpl1">
+      {{each result v i}}
+      <div class="product">
+        <img src="{{v.productImgSm.src}}" alt="" />
+        <div class="headline">
+         {{v.productName}}<i>{{v.productPinkage}}</i>
+          <div class="source">
+            <span><span>{{v.productFrom}}</span>丨<span>{{v.productTime}}</span></span>
+            <span>{{v.productComCount}}</span>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </script>
+  </body>
+</html>
