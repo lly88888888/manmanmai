@@ -1,0 +1,39 @@
+.mmm_dropDown_menu {
+  .first_menu {
+    border: 1px solid #ccc;
+    li {
+      a {
+        display: block;
+        height: 35px;
+        padding-left: 15px;
+        background: url('http://www.zuyushop.com/wap/images/arrow1.gif') center
+          right no-repeat;
+        border-bottom: 1px solid #ccc;
+        line-height: 35px;
+      }
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: stretch;
+        background-color: #fff;
+        li {
+          // 作用自身
+          flex-basis: 33.33%;
+          border-right: 1px solid #ccc;
+          text-align: center;
+          font-size: 14px;
+          &:last-child {
+            border-bottom: 0 solid #000;
+          }
+          a {
+            background: none;
+          }
+        }
+        &.active {
+          transform: scale(0);
+          height: 0;
+        }
+      }
+    }
+  }
+}

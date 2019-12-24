@@ -1,0 +1,145 @@
+.classify {
+  display: flex;
+  height: 38px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#ebebeb));
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+  line-height: 38px;
+  padding: 0 5px;
+  .place {
+    flex: 1;
+  }
+  span {
+    width: 54px;
+    height: 28px;
+    text-align: center;
+    margin-top: 4px;
+    line-height: 28px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px #888;
+    background: -webkit-gradient(
+      linear,
+      0 0,
+      0 100%,
+      from(#d7d7d7),
+      to(#f5f5f5)
+    );
+  }
+}
+.mmm_details {
+  background-color: #fff;
+
+  .picture {
+    height: 215px;
+    text-align: center;
+    padding-top: 20px;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .choose {
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid #c14d00;
+    border-bottom: 1px solid #c14d00;
+    a {
+      flex: 33.33%;
+      display: block;
+      text-align: center;
+      color: #fff;
+      height: 34px;
+      line-height: 34px;
+      background: -webkit-gradient(
+        linear,
+        0 0,
+        0 100%,
+        from(#ffd050),
+        to(#fb0)
+      );
+      &:nth-child(1) {
+        background: -webkit-gradient(
+          linear,
+          0 0,
+          0 100%,
+          from(#ffa632),
+          to(#ff9000)
+        );
+      }
+      &:nth-child(2) {
+        border-left: 1px solid #c14d00;
+        border-right: 1px solid #c14d00;
+      }
+    }
+  }
+
+  .jd {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    font-size: 16px;
+    margin-top: 12px;
+    border-bottom: 1px solid #ccc;
+    .jdsc {
+      img {
+        margin: 0 15px;
+      }
+    }
+    .money {
+      display: flex;
+      justify-content: space-between;
+      span {
+        color: #c14d00;
+        line-height: 28px;
+      }
+      a {
+        width: 56px;
+        height: 24px;
+        background-color: red;
+        text-align: center;
+        line-height: 24px;
+        border-radius: 5px;
+        margin-left: 10px;
+        color: #fff;
+      }
+    }
+  }
+  .comment {
+    .from {
+      text-align: right;
+    }
+  }
+  .hint {
+    font-size: 12px;
+    color: #888;
+    padding: 8px 10px;
+    line-height: 18px;
+  }
+  .monicker {
+    display: flex;
+    justify-content: space-between;
+  }
+  .seemore {
+    display: flex;
+    padding: 0 8px;
+    margin-top: 16px;
+    a {
+      flex: 1;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      background: -webkit-gradient(
+        linear,
+        0 0,
+        0 100%,
+        from(#f1f1f1),
+        to(#d4d4d4)
+      );
+      background-color: #d4d4d4;
+      border-bottom: 1px solid #bababa;
+      border-radius: 5px;
+    }
+    padding-bottom: 20px;
+  }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/moneyproduct.css" />
+    <script src="./lib/jquery-3.3.1.js"></script>
+    <script src="./lib/template-web.min.js"></script>
+    <script src="./js/moneyproduct.js"></script>
+  </head>
+  <body>
+    <header class="mmm_header">
+      <div class="mmm_title">
+        <h1>国内折扣</h1>
+      </div>
+      <div class="mmm_download">
+        <a href="">
+          <img src="./images/header_app.png" alt="" />
+        </a>
+      </div>
+    </header>
+    <section class="center"></section>
+    <section class="has_cargo">
+      <div class="list">
+        <ul></ul>
+      </div>
+      <a href="">立即购买</a>
+
+      <div class="code">
+        <img src="./images/mmbweixin2.png" alt="" />
+      </div>
+
+      <div class="comment">
+        <p>发表评论</p>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <div class="publish">
+          <button>发表评论</button>
+        </div>
+
+        <p>最新评论</p>
+        <div class="newest">
+          <img
+            src="http://home.manmanbuy.com/upface/face/1466230634_162.jpg"
+            alt=""
+          />
+          <div class="designation">
+            <span>赶鸭子上架</span>
+            <span>2016/12/13 16:40:20</span>
+            <p>还行吧</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/html" id="tpl">
+      <div class="headline">
+        <h3>
+          {{productInfo1}}
+        </h3>
+        <p class="source">
+          <span>{{productFrom}}</span>
+          <span>{{productTime}}</span>
+          <span>{{productTips}}</span>
+        </p>
+      </div>
+      <div class="introduce">
+        <div class="info">
+          <p>
+            {{productInfo}}
+          </p>
+          <p>{{productName}}</p>
+          <p>
+            <img
+              src="{{productImgSm.src}}"
+              alt="{{productImgSm.alt}}"
+            />
+          </p>
+        </div>
+        <div class="picture">
+          <img src="{{productImg2.src}}" alt="{{productImg2.alt}}" />
+        </div>
+      </div>
+    </script>
+
+    <script type="text/html" id="tpl1">
+      {{each productCity v i}}
+      <li>
+        <span>{{v.slice(0,2)}}</span>
+        <span>{{v.slice(2,4)}}</span>
+      </li>
+      {{/each}}
+    </script>
+  </body>
+</html>

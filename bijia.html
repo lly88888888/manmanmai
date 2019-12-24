@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>比价</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/bijia.css" />
+    <script src="./lib/jquery-3.3.1.js"></script>
+    <script src="./lib/template-web.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/bijia.js"></script>
+  </head>
+  <body>
+    <!-- @@include ./template/header.html -->
+    <!-- @@include ./template/search.html -->
+    <section class="classify">
+      <div class="place">
+        <a href="index.html">首页 ></a> <a href="productlist.html">全部分类 ></a
+        ><i></i>
+      </div>
+      <span>筛选</span>
+    </section>
+    <section class="mmm_details">
+      <div class="picinfo"></div>
+      <p class="hint">
+        *
+        实际价格以各网站列出的实时售价为准，我们提供的价格可能有数小时至数日的延迟。
+      </p>
+      <div class="netfriend">
+        网友评价
+      </div>
+      <div class="comment"></div>
+      <div class="seemore">
+        <a href="">查看更多</a>
+      </div>
+    </section>
+    <!-- @@include ./template/footer.html -->
+
+    <script type="text/html" id="tpl">
+
+       <div class="picture">
+        <p>{{productName}}</p>
+        <img src="{{productImg.src}}" alt="" />
+      </div>
+      <div class="choose">
+        <a href="">比价购买</a>
+        <a href="">产品参数</a>
+        <a href="">评价(1234)</a>
+      </div>
+      <div class="jd">
+        <div class="jdsc">
+          <a href="">
+            <img
+              src="http://sf.manmanbuy.com/images/sitelogo/1.png"
+              alt=""
+            />京东商城
+          </a>
+        </div>
+        <div class="money">
+          <span>{{bjShop}}</span>
+          <a href="">去购买</a>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/html" id="tpl1">
+       {{each result v i}}
+
+
+      <div class="monicker">
+        <span>{{v.comName}}</span>
+        <div class="from">
+          <p>{{v.comTime}}</p>
+          <p>{{v.comFrom}}</p>
+        </div>
+      </div>
+      <div class="txt">
+        <p>
+          {{v.comContent}}
+        </p>
+      </div>
+       {{/each}}
+    </script>
+  </body>
+</html>

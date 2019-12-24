@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>详情页</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/productlist.css" />
+    <script src="./lib/jquery-3.3.1.js"></script>
+    <script src="./lib/template-web.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/productlist.js"></script>
+  </head>
+  <body>
+    <!-- 头部 -->
+    <!-- @@include ./template/header.html -->
+    <!-- 搜索 -->
+    <!-- @@include ./template/search.html -->
+    <section class="classify">
+      <div class="place">
+        <a href="index.html">首页 ></a>
+        <a href="productlist.html">全部分类 ></a><i></i>
+      </div>
+      <span>筛选</span>
+    </section>
+
+    <section class="inner"></section>
+    <section class="paging">
+      <span class="previous_page">上一页</span>
+      <select id="drop_menu"></select>
+      <span class="next_page">下一页</span>
+    </section>
+    <!-- 底部 -->
+    <!-- @@include ./template/footer.html -->
+
+    <script type="text/html" id="tpl">
+      {{each list v i}}
+      <a class="product" href="bijia.html?productId={{v.productId}}&categoryId={{v.categoryId}}">
+        <img src="{{v.productImg.src}}" alt="" />
+        <div class="headline">
+          <p>{{v.productName}}</p>
+          <p>{{v.productPrice}}</p>
+          <span>{{v.productQuote}}</span> <span>{{v.productCom}}</span>
+        </div>
+      </a>
+      {{/each}}
+    </script>
+  </body>
+</html>

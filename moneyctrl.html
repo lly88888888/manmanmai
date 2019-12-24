@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>省钱控</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/moneyctrl.css" />
+    <script src="./lib/jquery-3.3.1.js"></script>
+    <script src="./lib/template-web.min.js"></script>
+    <script src="./js/moneyctrl.js"></script>
+  </head>
+  <body>
+    <header class="mmm_header">
+      <div class="mmm_title">
+        <h1>省钱控-最新优惠</h1>
+      </div>
+      <div class="mmm_download">
+        <a href="">
+          <img src="./images/header_app.png" alt="" />
+        </a>
+      </div>
+    </header>
+    <a class="inner"></a>
+    <section class="paging">
+      <span class="previous_page">上一页</span>
+      <select id="drop_menu"></select>
+      <span class="next_page">下一页</span>
+    </section>
+    <!-- @@include ./template/footer.html -->
+    <script type="text/html" id="tpl">
+      {{each result v i}}
+      <div class="product">
+        <img src="{{v.productImgSm.src}}" alt="" />
+        <div class="headline">
+         {{v.productName}}<i>{{v.productPinkage}}</i>
+          <div class="source">
+            <span><span>{{v.productFrom}}</span>丨<span>{{v.productTime}}</span></span>
+            <span>{{v.productComCount}}</span>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </script>
+  </body>
+</html>
