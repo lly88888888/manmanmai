@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0,user-scalable=no, maximum-scale=1.0, minimum-scale=1.0""
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/baicaijia.css" />
+    <script src="./lib/jquery-3.3.1.js"></script>
+    <script src="./lib/template-web.min.js"></script>
+    <script src="./lib/iscroll.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/baicaijia.js"></script>
+  </head>
+  <body>
+    <header class="mmm_header">
+      <div class="mmm_title">
+        <h1>白菜价-淘宝内部券</h1>
+      </div>
+      <div class="mmm_download">
+        <a href="">
+          <img src="./images/header_app.png" alt="" />
+        </a>
+      </div>
+    </header>
+
+    <section class="sliding-nav">
+      <ul class="nav-all clearfix"></ul>
+      <div class="task"></div>
+    </section>
+
+    <section class="pro-list">
+      <ul class="product-list"></ul>
+    </section>
+
+    <div class="returntop"></div>
+
+    <!-- @@include ./template/footer.html -->
+
+    <script type="text/html" id="tpl">
+      {{each result v i}}
+      <li data-id={{v.titleId}}><a href="javascript:;">{{v.title}}</a></li>
+      {{/each}}
+    </script>
+    <script type="text/html" id="tpl1">
+      {{each result v i}}
+      <li>
+        <img src="{{v.productImg}}" alt="" />
+        <div class="right">
+          <div class="headline">{{v.productName}}</div>
+          <div class="price"><span>{{v.productPrice.split('¥')[0]+v.productPrice.split('¥')[1]}}</span> <i>{{v.productPrice.split('¥')[2]}}</i></div>
+          <div class="discounts">
+            <span>已领15% <em></em></span><i>已领82张</i>
+          </div>
+          <div class="clicks">
+            <span>点击领10元优惠券</span>
+            <button>下单链接</button>
+          </div>
+        </div>
+      </li>
+      {{/each}}
+    </script>
+  </body>
+</html>

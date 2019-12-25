@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0,user-scalable=no, maximum-scale=1.0, minimum-scale=1.0""
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/couponproduct.css" />
+    <script src="./lib/jquery-3.3.1.js"></script>
+    <script src="./lib/template-web.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/couponproduct.js"></script>
+  </head>
+  <body>
+    <header class="mmm_header">
+      <div class="mmm_title">
+        <h1>优惠券</h1>
+      </div>
+      <div class="mmm_download">
+        <a href="">
+          <img src="./images/header_app.png" alt="" />
+        </a>
+      </div>
+    </header>
+
+    <section class="mmm_details">
+      <div class="reminder">--点餐前出示手机中的优惠券，即可享受优惠--</div>
+
+      <div class="details">
+        <ul></ul>
+      </div>
+    </section>
+
+    <!-- @@include ./template/footer.html -->
+
+    <script type="text/html" id="tpl">
+      {{each result v i}}
+      <li>
+        <a href="javascript:;">
+          <div class="picture">
+            <img src="{{v.couponProductImg.src}}" alt="{{v.couponProductImg.alt}}" />
+          </div>
+          <div class="info">
+            <h3>
+             {{v.couponProductName}}
+            </h3>
+            <h2>{{v.couponProductPrice}}</h2>
+            <p>{{v.couponProductTime}}</p>
+          </div>
+        </a>
+      </li>
+      {{/each}}
+    </script>
+  </body>
+</html>

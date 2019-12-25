@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/moneyproduct.css" />
     <script src="./lib/jquery-3.3.1.js"></script>
     <script src="./lib/template-web.min.js"></script>
-    <script src="./js/moneyproduct.js"></script>
+    <script src="./js/discount.js"></script>
   </head>
   <body>
     <header class="mmm_header">
@@ -58,11 +58,10 @@
     <script type="text/html" id="tpl">
       <div class="headline">
         <h3>
-          {{productInfo1}}
+          {{productName}}
         </h3>
         <p class="source">
           <span>{{productFrom}}</span>
-          <span>{{productTime}}</span>
           <span>{{productTips}}</span>
         </p>
       </div>
@@ -72,27 +71,17 @@
             {{productInfo}}
           </p>
           <p>{{productName}}</p>
-          <p>
+          <!-- <p>
             <img
-              src="{{productImgSm.src}}"
-              alt="{{productImgSm.alt}}"
+              src="{{productImg.src}}"
+              alt="{{productImg.alt}}"
             />
-          </p>
+          </p> -->
         </div>
         <div class="picture">
-          <img src="{{productImg2.src}}" alt="{{productImg2.alt}}" />
+          <img src="{{productImg.src}}" alt="{{productImg.alt}}" />
         </div>
       </div>
-    </script>
-
-    <script type="text/html" id="tpl1">
-      {{each productCity v i}}
-
-      <li>
-        <span>{{v.split('有')[0]}}</span>
-        <span>有货</span>
-      </li>
-      {{/each}}
     </script>
   </body>
 </html>

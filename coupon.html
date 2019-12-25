@@ -2,19 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0,user-scalable=no, maximum-scale=1.0, minimum-scale=1.0""
+    />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>国内折扣</title>
+    <title>Document</title>
     <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/inlanddiscount.css" />
+    <link rel="stylesheet" href="./css/coupon.css" />
     <script src="./lib/jquery-3.3.1.js"></script>
     <script src="./lib/template-web.min.js"></script>
-    <script src="./js/inlanddiscount.js"></script>
+    <script src="./lib/iscroll.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/coupon.js"></script>
   </head>
   <body>
     <header class="mmm_header">
       <div class="mmm_title">
-        <h1>国内折扣</h1>
+        <h1>优惠券</h1>
       </div>
       <div class="mmm_download">
         <a href="">
@@ -22,18 +26,19 @@
         </a>
       </div>
     </header>
-    <ul class="inner"></ul>
+
+    <section class="mmm_ticket">
+      <ul></ul>
+    </section>
 
     <!-- @@include ./template/footer.html -->
 
     <script type="text/html" id="tpl">
       {{each result v i}}
       <li>
-        <a href="discount.html?productid={{v.productId}}">
-          <img src="{{v.productImg.src}}" alt="{{v.productImg.alt}}" />
-          <p>{{v.productName}}</p>
-          <p class="price">{{v.productPrice}}</p>
-          <span>{{v.productFrom}}</span>
+        <a href="{{v.couponLink}}?couponid={{v.couponId}}">
+          <img src="{{v.couponImg}}" alt="" />
+          <p>{{v.couponTitle}}</p>
         </a>
       </li>
       {{/each}}

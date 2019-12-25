@@ -31,7 +31,7 @@
     <!-- @@include ./template/footer.html -->
     <script type="text/html" id="tpl">
       {{each result v i}}
-      <div class="product">
+      <a class="product" href="moneyproduct.html?productid={{v.productId}}">
         <img src="{{v.productImgSm.src}}" alt="" />
         <div class="headline">
          {{v.productName}}<i>{{v.productPinkage}}</i>
@@ -40,7 +40,7 @@
             <span>{{v.productComCount}}</span>
           </div>
         </div>
-      </div>
+      </a>
       {{/each}}
     </script>
   </body>
