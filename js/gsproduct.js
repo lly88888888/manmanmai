@@ -1,4 +1,6 @@
 $(function() {
+  let shopid
+  let areaid
   $('.nav-all li')
     .eq(0)
     .on('click', function() {
@@ -52,7 +54,40 @@ $(function() {
 
   $('.dropMenu-ul').on('click', 'li', function() {
     // 现在的任务是点击下拉菜单然后把下拉菜单的值赋予给nav
-    $(that).text($(this).text())
-    render($(this).data('id'))
+    // $(that).text($(this).text())
+    if ($(this).data('shopid') !== undefined) {
+      shopid = $(this).data('shopid')
+      $('.nav-all li')
+        .eq(0)
+        .text($(this).text())
+      $('.nav-all li')
+        .eq(0)
+        .attr('data-shopid', $(this).data('shopid'))
+      areaid = $('.nav-all li')
+        .eq(1)
+        .data('areaid')
+      console.log(shopid, areaid)
+
+      render(shopid, areaid)
+      $('.dropMenu').hide()
+    }
+    if ($(this).data('areaid') !== undefined) {
+      areaid = $(this).data('areaid')
+      $('.nav-all li')
+        .eq(1)
+        .text($(this).text())
+      $('.nav-all li')
+        .eq(1)
+        .attr('data-areaid', $(this).data('areaid'))
+      shopid = $('.nav-all li')
+        .eq(0)
+        .data('shopid')
+      console.log(shopid, areaid)
+
+      render(shopid, areaid)
+      $('.dropMenu').hide()
+    }
+    // render($(this).data('id'))
+    // $('.dropMenu').hide()
   })
 })

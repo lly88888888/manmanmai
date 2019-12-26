@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>首页</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/brand.css" />
+    <script src="./lib/jquery-3.3.1.js"></script>
+    <script src="./lib/template-web.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/brand.js"></script>
+    <!-- <script src="./js/rem.js"></script> -->
+  </head>
+  <body>
+    <!-- 头部 -->
+    <!-- @@include ./template/header.html -->
+    <!-- 搜索部分 -->
+    <!-- @@include ./template/search.html -->
+    <!-- 导航 -->
+    <section class="classify">
+      <div class="place">
+        <a href="index.html">首页 ></a>
+        <a href="productlist.html">全部分类 ></a><i></i>
+      </div>
+    </section>
+
+    <section class="all_classify">
+      <div class="good-logo"><a href="javascript:;">哪个牌子好</a></div>
+    </section>
+
+    <section class="mmm_ranking">
+      <ul></ul>
+    </section>
+    <!-- 主体区域 -->
+
+    <!-- 底部区域 -->
+    <!-- @@include ./template/footer.html -->
+
+    <script type="text/html" id="tpl">
+      {{each result v i}}
+      <li>
+        <a href="productlist.html?categoryid=0&category=电视&pageid=1">
+          <div class="ranking">{{i}}</div>
+          <div class="inner">
+            <p>{{v.brandName}}</p>
+            <span>{{v.brandInfo}}</span>
+          </div>
+        </a>
+      </li>
+      {{/each}}
+    </script>
+  </body>
+</html>
