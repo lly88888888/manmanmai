@@ -61,7 +61,6 @@ $(function() {
         .eq(0)
         .text($(this).text())
       render(shopid, areaid)
-      $('.dropMenu').hide()
     }
     if ($(this).data('areaid') !== undefined) {
       areaid = $(this).data('areaid')
@@ -69,7 +68,7 @@ $(function() {
         .eq(1)
         .text($(this).text())
       render(shopid, areaid)
-      $('.dropMenu').hide()
     }
+    $('.dropMenu').hide()
   })
 })
