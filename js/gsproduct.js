@@ -60,14 +60,6 @@ $(function() {
       $('.nav-all li')
         .eq(0)
         .text($(this).text())
-      $('.nav-all li')
-        .eq(0)
-        .attr('data-shopid', $(this).data('shopid'))
-      areaid = $('.nav-all li')
-        .eq(1)
-        .data('areaid')
-      console.log(shopid, areaid)
-
       render(shopid, areaid)
       $('.dropMenu').hide()
     }
@@ -76,18 +68,8 @@ $(function() {
       $('.nav-all li')
         .eq(1)
         .text($(this).text())
-      $('.nav-all li')
-        .eq(1)
-        .attr('data-areaid', $(this).data('areaid'))
-      shopid = $('.nav-all li')
-        .eq(0)
-        .data('shopid')
-      console.log(shopid, areaid)
-
       render(shopid, areaid)
       $('.dropMenu').hide()
     }
-    // render($(this).data('id'))
-    // $('.dropMenu').hide()
   })
 })
